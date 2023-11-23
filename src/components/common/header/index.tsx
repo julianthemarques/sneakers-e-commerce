@@ -1,11 +1,21 @@
+"use client"
 import { CartIcon } from "@/assets/images/icon-cart"
 import { Logo } from "@/assets/images/logo"
 import Image from "next/image"
 import Avatar from "@/assets/images/image-avatar.png"
 import { NavsMock } from "@/mock/navsmock"
+import { useEffect, useState } from "react"
 
 
 export const Header = () => { 
+    const [client, setClient] = useState(true)
+
+    useEffect(() => {
+        setClient(false)
+    }, [])
+    
+    if (client) return
+
     return(
     <header className="flex justify-between border-style: solid border-b-2  border-black/25">
         <div className="flex justify-between ">
