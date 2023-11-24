@@ -1,5 +1,5 @@
 export interface iNavs {
-    id: string;
-    label: string;
-    link: string;
+  id: string;
+  label: string;
+  link: string;
 }
