@@ -11,6 +11,6 @@ export const IconMinus = () => (
         id="a"
       />
     </defs>
-    <use fill="#FF7E1B" fill-rule="nonzero" xlinkHref="#a" />
+    <use fill="#FF7E1B" fillRule="nonzero" xlinkHref="#a" />
   </svg>
 );

@@ -11,6 +11,6 @@ export const IconDelete = () => {
         id="a"
       />
     </defs>
-    <use fill="#C3CAD9" fill-rule="nonzero" xlinkHref="#a" />
+    <use fill="#C3CAD9" fillRule="nonzero" xlinkHref="#a" />
   </svg>;
 };

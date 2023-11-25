@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import thumbnail1 from "@/assets/images/image-product-1-thumbnail.jpg";
 import imageProduct1 from "@/assets/images/image-product-1.jpg";
@@ -12,24 +11,25 @@ import { CartIcon } from "@/assets/images/icon-cart";
 import { IconNext } from "@/assets/images/icon-next";
 import { IconMinus } from "@/assets/images/icon-minus";
 import { IconPrevious } from "@/assets/images/icon-previous";
+import { IconPlus } from "@/assets/images/icon-plus";
 
 export default function Home() {
   return (
-    <>
-      <div className="flex mt-28 justify-around">
-        <div className="left-container">
-          <div className="h-[30rem] w-[30rem] border-2 rounded-md mb-4">
+    <main className="max-w-7xl mx-auto px-4 mt-28">
+      <div className="flex items-center w-full justify-around gap-4 flex-wrap">
+        <div className="left-container max-w-lg w-full">
+          <div className="border-2 rounded-md mb-4 w-full">
             <Image
-              className="rounded-md"
+              className="rounded-md aspect-square w-full"
               width={1000}
               height={1000}
               alt=""
               src={imageProduct1}
             />
           </div>
-          <div className="flex justify-between">
+          <div className="grid grid-cols-4 gap-4">
             <Image
-              className="h-[7rem] w-[7rem] rounded-md hover:border-orange border-2"
+              className="w-full aspect-square  rounded-md hover:border-orange border-2"
               alt=""
               src={imageProduct1}
               width={1000}
@@ -40,17 +40,17 @@ export default function Home() {
               src={imageProduct2}
               width={1000}
               height={1000}
-              className="h-[7rem] w-[7rem] rounded-md hover:border-orange border-2"
+              className="w-full aspect-square rounded-md hover:border-orange border-2"
             />
             <Image
-              className="h-[7rem] w-[7rem] rounded-md hover:border-orange border-2"
+              className="w-full aspect-square rounded-md hover:border-orange border-2"
               alt=""
               src={imageProduct3}
               width={1000}
               height={1000}
             />
             <Image
-              className="h-[7rem] w-[7rem] rounded-md hover:border-orange border-2"
+              className="w-full aspect-square rounded-md hover:border-orange border-2"
               alt=""
               src={imageProduct4}
               width={1000}
@@ -58,14 +58,16 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="right-container">
-          <span className="text-lg font-bold text-orange">
-            sneakers company
-          </span>
-          <h1 className="text-4xl font-bold">
-            Fall Limites Edition <br /> Sneakers
-          </h1>
-          <p className="font-sm font-xs font-light opacity-[80%]">
+        <div className="right-container space-y-8">
+          <div>
+            <span className="text-lg font-bold text-orange mb-4 block">
+              sneakers company
+            </span>
+            <h1 className="text-4xl font-bold">
+              Fall Limites Edition <br /> Sneakers
+            </h1>
+          </div>
+          <p className="font-sm font-xs font-light opacity-80">
             these low-profile sneakers are your perfect casual wear <br />{" "}
             companion. Featuring a durable rubber outer sole, they'ill <br />{" "}
             withstand everything the weather can offer.
@@ -76,24 +78,24 @@ export default function Home() {
               50%
             </span>
           </div>
-          <span className="opacity-[80%] line-through">$250.00</span>
-          <div className="flex gap-4 mt-">
-            <div className="px-[5rem] py-[0.5rem] bg-lightGrayishBlue rounded-md flex">
+          <span className="opacity-80 line-through">$250.00</span>
+          <div className="flex gap-4 w-full">
+            <div className="p-4 bg-lightGrayishBlue rounded-md flex w-fit space-x-8">
               <button type="button">
-                <IconPrevious />
+                <IconMinus />
               </button>
               <span>7</span>
               <button className="">
-                <IconNext />
+                <IconPlus />
               </button>
             </div>
-            <button className="bg-orange cursor-pointer flex items-center px-12 rounded-md">
+            <button className="p-4 bg-orange cursor-pointer flex items-center rounded-md w-full justify-center gap-4">
               <CartIcon colorFill="white" className="text-white" />{" "}
               <p className="text-white">Add to cart</p>
             </button>
           </div>
         </div>
       </div>
-    </>
+    </main>
   );
 }

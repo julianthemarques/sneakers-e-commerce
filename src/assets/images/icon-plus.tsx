@@ -1,4 +1,4 @@
-export const IconPlus = () => {
+export const IconPlus = () => (
   <svg
     width="12"
     height="12"
@@ -11,6 +11,6 @@ export const IconPlus = () => {
         id="b"
       />
     </defs>
-    <use fill="#FF7E1B" fill-rule="nonzero" xlinkHref="#b" />
-  </svg>;
-};
+    <use fill="#FF7E1B" fillRule="nonzero" xlinkHref="#b" />
+  </svg>
+);
