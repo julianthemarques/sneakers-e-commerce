@@ -12,6 +12,9 @@ import { IconNext } from "@/assets/images/icon-next";
 import { IconMinus } from "@/assets/images/icon-minus";
 import { IconPrevious } from "@/assets/images/icon-previous";
 import { IconPlus } from "@/assets/images/icon-plus";
+import { useState } from "react";
+import { CounterContainer } from "@/components/common/Counter";
+import { AddCardForm } from "./addCardForm";
 
 export default function Home() {
   return (
@@ -79,21 +82,7 @@ export default function Home() {
             </span>
           </div>
           <span className="opacity-80 line-through">$250.00</span>
-          <div className="flex gap-4 w-full">
-            <div className="p-4 bg-lightGrayishBlue rounded-md flex w-fit space-x-8">
-              <button type="button">
-                <IconMinus />
-              </button>
-              <span>7</span>
-              <button className="">
-                <IconPlus />
-              </button>
-            </div>
-            <button className="p-4 bg-orange cursor-pointer flex items-center rounded-md w-full justify-center gap-4">
-              <CartIcon colorFill="white" className="text-white" />{" "}
-              <p className="text-white">Add to cart</p>
-            </button>
-          </div>
+          <AddCardForm id="1" />
         </div>
       </div>
     </main>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Kumbh_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/common/header";
+import { CartContextProvider } from "@/contexts/Cart";
 
 const inter = Kumbh_Sans({ subsets: ["latin"] });
 
@@ -18,8 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className + " px-24 py-10"}>
-        <Header />
-        {children}
+        <CartContextProvider>
+          <Header />
+          {children}
+        </CartContextProvider>
       </body>
     </html>
   );
