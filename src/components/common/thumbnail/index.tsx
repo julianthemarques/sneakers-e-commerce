@@ -11,20 +11,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 export const ThumbnailContainer = () => {
-  const [thumbnailSelection, setThumbnailSelection] = useState(0);
-  let OutDoorImage = imageProduct1;
-
-  useEffect(() => {
-    thumbnailSelection === 0
-      ? (OutDoorImage = imageProduct1)
-      : thumbnailSelection === 1
-      ? (OutDoorImage = imageProduct2)
-      : thumbnailSelection === 2
-      ? (OutDoorImage = imageProduct3)
-      : thumbnailSelection === 3
-      ? (OutDoorImage = imageProduct4)
-      : imageProduct1;
-  }, [thumbnailSelection]);
+  const [thumbnailSelection, setThumbnailSelection] = useState(imageProduct1);
 
   return (
     <div className="left-container max-w-lg w-full">
@@ -34,7 +21,7 @@ export const ThumbnailContainer = () => {
           width={1000}
           height={1000}
           alt=""
-          src={OutDoorImage}
+          src={thumbnailSelection}
         />
       </div>
       <div className="grid grid-cols-4 gap-4">
@@ -44,14 +31,14 @@ export const ThumbnailContainer = () => {
           src={thumbnail1}
           width={1000}
           height={1000}
-          onClick={() => setThumbnailSelection(0)}
+          onClick={() => setThumbnailSelection(imageProduct1)}
         />
         <Image
           alt=""
           src={thumbnail2}
           width={1000}
           height={1000}
-          onClick={() => setThumbnailSelection(1)}
+          onClick={() => setThumbnailSelection(imageProduct2)}
           className="w-full aspect-square rounded-md hover:border-orange border-2"
         />
         <Image
@@ -60,7 +47,7 @@ export const ThumbnailContainer = () => {
           src={thumbnail3}
           width={1000}
           height={1000}
-          onClick={() => setThumbnailSelection(2)}
+          onClick={() => setThumbnailSelection(imageProduct3)}
         />
         <Image
           className="w-full aspect-square rounded-md hover:border-orange border-2"
@@ -68,7 +55,7 @@ export const ThumbnailContainer = () => {
           src={thumbnail4}
           width={1000}
           height={1000}
-          onClick={() => setThumbnailSelection(3)}
+          onClick={() => setThumbnailSelection(imageProduct4)}
         />
       </div>
     </div>
