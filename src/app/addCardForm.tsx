@@ -1,7 +1,7 @@
 "use client";
 
 import { CartIcon } from "@/assets/images/icon-cart";
-import { CounterContainer } from "@/components/common/Counter";
+import { CounterContainer } from "@/components/common/counter";
 import { Product, useCartContext } from "@/contexts/Cart";
 import React from "react";
 

@@ -13,8 +13,10 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useCartContext } from "@/contexts/Cart";
 
 export const Header = () => {
+  const { carts } = useCartContext();
   const [client, setClient] = useState(true);
 
   useEffect(() => {
@@ -46,9 +48,11 @@ export const Header = () => {
         <DropdownMenu>
           <DropdownMenuTrigger className="relative">
             <CartIcon className="cursor-pointer" />
-            <span className="flex justify-center items-center  rounded-full h-4 w-4 bg-orange absolute -top-2 -right-2 text-white text-xs font-semibold">
-              7
-            </span>
+            {carts.length ? (
+              <span className="flex justify-center items-center  rounded-full h-4 w-4 bg-orange absolute -top-2 -right-2 text-white text-xs font-semibold">
+                {carts.length}
+              </span>
+            ) : null}
           </DropdownMenuTrigger>
           <DropdownMenuContent className="bg-white min-h-[12rem] w-72 mt-5">
             <DropdownMenuLabel>Cart</DropdownMenuLabel>
