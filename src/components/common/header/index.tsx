@@ -19,6 +19,8 @@ export const Header = () => {
   const { carts } = useCartContext();
   const [client, setClient] = useState(true);
 
+  console.log(carts);
+
   useEffect(() => {
     setClient(false);
   }, []);
@@ -54,10 +56,16 @@ export const Header = () => {
               </span>
             ) : null}
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="bg-white min-h-[12rem] w-72 mt-5">
-            <DropdownMenuLabel>Cart</DropdownMenuLabel>
+          <DropdownMenuContent className="bg-white min-h-[12rem] w-80 mt-5 p-2">
+            <DropdownMenuLabel className="solid border-b-[1px]  border-black/25">
+              Cart
+            </DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <div></div>
+            {!carts.length ? (
+              <div className="flex opacity-60 font-bold justify-center">
+                Your cart is empty.
+              </div>
+            ) : null}
           </DropdownMenuContent>
         </DropdownMenu>
 
