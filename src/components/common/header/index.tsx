@@ -56,14 +56,14 @@ export const Header = () => {
               </span>
             ) : null}
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="bg-white min-h-[12rem] w-80 mt-5 p-2">
-            <DropdownMenuLabel className="solid border-b-[1px]  border-black/25">
+          <DropdownMenuContent className="bg-white min-h-[12rem] w-80 mt-5 p-2 flex flex-col">
+            <DropdownMenuLabel className="solid border-b-[1px] h-fit border-black/25">
               Cart
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
             {!carts.length ? (
-              <div className="flex opacity-60 font-bold justify-center">
-                Your cart is empty.
+              <div className="flex flex-1 text-muted-foreground italic opacity-70 justify-center h-full items-center">
+                <span>Your cart is empty.</span>
               </div>
             ) : null}
           </DropdownMenuContent>
