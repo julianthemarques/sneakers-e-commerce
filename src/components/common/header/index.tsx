@@ -14,12 +14,12 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useCartContext } from "@/contexts/Cart";
+import thumbnail1 from "@/assets/images/image-product-1-thumbnail.jpg";
+import { IconDelete } from "@/assets/images/icon-delete";
 
 export const Header = () => {
-  const { carts } = useCartContext();
+  const { carts, setCarts } = useCartContext();
   const [client, setClient] = useState(true);
-
-  console.log(carts);
 
   useEffect(() => {
     setClient(false);
@@ -52,11 +52,13 @@ export const Header = () => {
             <CartIcon className="cursor-pointer" />
             {carts.length ? (
               <span className="flex justify-center items-center  rounded-full h-4 w-4 bg-orange absolute -top-2 -right-2 text-white text-xs font-semibold">
-                {carts.length}
+                {carts.map((produto, index) => {
+                  return carts[index].amount;
+                })}
               </span>
             ) : null}
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="bg-white min-h-[12rem] w-80 mt-5 p-2 flex flex-col">
+          <DropdownMenuContent className="bg-white min-h-[12rem] w-80 mt-5 flex flex-col">
             <DropdownMenuLabel className="solid border-b-[1px] h-fit border-black/25">
               Cart
             </DropdownMenuLabel>
@@ -65,10 +67,44 @@ export const Header = () => {
               <div className="flex flex-1 text-muted-foreground italic opacity-70 justify-center h-full items-center">
                 <span>Your cart is empty.</span>
               </div>
-            ) : null}
+            ) : (
+              <div className="p-3">
+                {carts.map((product) => {
+                  return (
+                    <div
+                      className="flex justify-between text-xs font-light items-center mb-6"
+                      key={product.id}
+                    >
+                      <Image
+                        className="w-10 h-10 rounded-md"
+                        alt=""
+                        src={thumbnail1}
+                      />
+                      <div className="flex flex-col opacity-80">
+                        <p className="text-sm align-top">{product.name}</p>
+                        <p className="text-sm tracking-wide align-bottom">
+                          {"$" + product.price + ".00" + " x " + product.amount}
+                          <span className="font-bold ml-2">
+                            {"$" + product.amount * product.price + ".00"}
+                          </span>
+                        </p>
+                      </div>
+                      <button className="" onClick={() => ""}>
+                        <IconDelete />
+                      </button>
+                    </div>
+                  );
+                })}
+                <button
+                  type="submit"
+                  className="p-3 bg-orange cursor-pointer flex items-center rounded-md w-full self-center justify-center"
+                >
+                  <p className="text-white">Checkout</p>
+                </button>
+              </div>
+            )}
           </DropdownMenuContent>
         </DropdownMenu>
-
         <Image
           className="w-[1.75rem] h-[1.75rem] cursor-pointer hover:rounded-full hover:border-solid hover:border-2 hover:border-orange"
           width={100}

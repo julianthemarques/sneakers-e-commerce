@@ -15,7 +15,7 @@ export default function Home() {
               Fall Limites Edition <br /> Sneakers
             </h1>
           </div>
-          <p className="font-sm font-xs font-light opacity-80">
+          <p className="font-xs font-light opacity-80">
             these low-profile sneakers are your perfect casual wear <br />{" "}
             companion. Featuring a durable rubber outer sole, they'ill <br />{" "}
             withstand everything the weather can offer.

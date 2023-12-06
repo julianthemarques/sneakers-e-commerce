@@ -15,7 +15,7 @@ export const AddCardForm = ({ id }: { id: string }) => {
       id,
       amount,
       name: "Fall Limited Edition Sneakers",
-      price: 125,
+      price: 125.0,
     };
 
     setCarts((prev) => {
