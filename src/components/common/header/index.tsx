@@ -27,6 +27,7 @@ export const Header = () => {
 
   if (client) return;
 
+  console.log(carts);
   return (
     <header className="flex justify-between max-w-7xl mx-auto solid border-b-[1px]  border-black/25">
       <div className="flex justify-between ">
@@ -52,9 +53,7 @@ export const Header = () => {
             <CartIcon className="cursor-pointer" />
             {carts.length ? (
               <span className="flex justify-center items-center  rounded-full h-4 w-4 bg-orange absolute -top-2 -right-2 text-white text-xs font-semibold">
-                {carts.map((produto, index) => {
-                  return carts[index].amount;
-                })}
+                {carts.reduce((acc, prod) => acc + prod.amount, 0)}
               </span>
             ) : null}
           </DropdownMenuTrigger>
@@ -72,7 +71,7 @@ export const Header = () => {
                 {carts.map((product) => {
                   return (
                     <div
-                      className="flex justify-between text-xs font-light items-center mb-6"
+                      className="flex justify-between items-center mb-6"
                       key={product.id}
                     >
                       <Image
@@ -89,7 +88,19 @@ export const Header = () => {
                           </span>
                         </p>
                       </div>
-                      <button className="" onClick={() => ""}>
+                      <button
+                        className=""
+                        onClick={() =>
+                          setCarts((prev) => {
+                            const newPrev = [...prev];
+                            const productIndex = newPrev.findIndex(
+                              ({ id }) => product.id === id
+                            );
+                            newPrev.splice(productIndex, 1);
+                            return newPrev;
+                          })
+                        }
+                      >
                         <IconDelete />
                       </button>
                     </div>

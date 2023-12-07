@@ -8,6 +8,7 @@ import React from "react";
 export const AddCardForm = ({ id }: { id: string }) => {
   const { setCarts } = useCartContext();
   let amount = 1;
+
   function onSubmit(ev: React.FormEvent<HTMLFormElement>) {
     ev.preventDefault();
 
