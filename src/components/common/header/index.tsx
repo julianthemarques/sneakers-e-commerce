@@ -16,6 +16,8 @@ import {
 import { useCartContext } from "@/contexts/Cart";
 import thumbnail1 from "@/assets/images/image-product-1-thumbnail.jpg";
 import { IconDelete } from "@/assets/images/icon-delete";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 export const Header = () => {
   const { carts, setCarts } = useCartContext();

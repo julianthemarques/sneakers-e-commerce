@@ -1,4 +1,6 @@
-export const IconDelete = () => {
+import { cn } from "@/lib/utils";
+
+export const IconDelete = (className: { className?: string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -10,7 +12,7 @@ export const IconDelete = () => {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="opacity-60"
+      className={cn("opacity-60", className)}
     >
       <path d="M3 6h18" />
       <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" />

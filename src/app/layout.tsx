@@ -3,6 +3,8 @@ import { Kumbh_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/common/header";
 import { CartContextProvider } from "@/contexts/Cart";
+import "swiper/css";
+import "swiper/css/navigation";
 
 const inter = Kumbh_Sans({ subsets: ["latin"] });
 
