@@ -53,6 +53,7 @@ export const ThumbnailContainer = () => {
                     imageProduct4,
                   ].map((img, i) => (
                     <Image
+                      key={i}
                       className={cn(
                         "absolute w-full h-full top-0 left-0 opacity-0 transition-all pointer-events-none",
                         {
