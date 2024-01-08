@@ -18,6 +18,7 @@ import thumbnail1 from "@/assets/images/image-product-1-thumbnail.jpg";
 import { IconDelete } from "@/assets/images/icon-delete";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { IconMenu } from "@/assets/images/icon-menu";
 
 export const Header = () => {
   const { carts, setCarts } = useCartContext();
@@ -29,13 +30,13 @@ export const Header = () => {
 
   if (client) return;
 
-  console.log(carts);
   return (
-    <header className="flex justify-between max-w-7xl mx-auto solid border-b-[1px]  border-black/25">
+    <header className="flex justify-between max-w-7xl mx-auto solid lg:border-b-[1px]  border-black/25">
       <div className="flex justify-between ">
-        <nav>
-          <ul className="flex gap-9 justify-around  font-normal text-black h-16">
-            <Logo className="opacity-100" />
+        <nav className="flex gap-9">
+          <IconMenu className="lg:hidden" />
+          <Logo className="opacity-100" />
+          <ul className="flex gap-9 justify-around  font-normal text-black h-16 max-lg:hidden">
             {NavsMock.map((i) => {
               return (
                 <li
