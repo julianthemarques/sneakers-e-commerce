@@ -31,9 +31,9 @@ export const Header = () => {
   if (client) return;
 
   return (
-    <header className="flex justify-between max-w-7xl mx-auto solid lg:border-b-[1px]  border-black/25">
+    <header className="flex justify-between max-lg:bg-white max-lg:w-full max-lg:fixed max-lg:top-0 max-lg:left-0 max-w-7xl mx-auto solid max-lg:p-4 max-lg:items-center lg:border-b-[1px]  border-black/25">
       <div className="flex justify-between ">
-        <nav className="flex gap-9">
+        <nav className="flex lg:gap-9 max-lg:gap-4">
           <IconMenu className="lg:hidden" />
           <Logo className="opacity-100" />
           <ul className="flex gap-9 justify-around  font-normal text-black h-16 max-lg:hidden">
@@ -50,7 +50,7 @@ export const Header = () => {
           </ul>
         </nav>
       </div>
-      <div className="flex  items-start gap-8 h-16">
+      <div className="flex  items-start gap-8 h-16 max-lg:items-center">
         <DropdownMenu>
           <DropdownMenuTrigger className="relative">
             <CartIcon className="cursor-pointer" />

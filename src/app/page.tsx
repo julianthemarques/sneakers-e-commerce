@@ -1,11 +1,15 @@
 import { AddCardForm } from "./addCardForm";
 import { ThumbnailContainer } from "@/components/common/thumbnail";
+import thumbnail1 from "@/assets/images/image-product-1-thumbnail.jpg";
+import Image from "next/image";
+import { MobileThumbnailContainer } from "@/components/mobileThumbnail";
 
 export default function Home() {
   return (
     <main className="max-w-7xl mx-auto px-4 mt-28">
       <div className="flex items-center w-full justify-around gap-4 flex-wrap">
         <ThumbnailContainer />
+        <MobileThumbnailContainer />
         <div className="right-container space-y-8">
           <div>
             <span className="text-lg font-bold text-orange mb-4 block">
