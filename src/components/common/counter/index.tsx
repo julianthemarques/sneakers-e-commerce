@@ -17,7 +17,7 @@ export const CounterContainer = ({
   }, [counter]);
 
   return (
-    <div className="bg-lightGrayishBlue rounded-md flex items-center w-fit space-x-6">
+    <div className="bg-lightGrayishBlue rounded-md flex items-center w-fit space-x-6 max-md:w-full max-md:justify-between">
       <button
         type="button"
         disabled={counter === 1}

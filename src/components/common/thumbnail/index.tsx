@@ -27,12 +27,12 @@ export const ThumbnailContainer = () => {
   const [modalTrigger, setModalTrigger] = useState(false);
 
   return (
-    <div className="left-container max-w-lg w-full">
+    <div className="left-container max-w-lg w-full max-md:hidden">
       <div className="rounded-md mb-4 w-full">
         <Dialog>
           <DialogTrigger>
             <Image
-              className="rounded-md aspect-square w-full self-center"
+              className="max-lg:rounded-md aspect-square w-full self-center"
               width={1000}
               height={1000}
               alt=""

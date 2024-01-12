@@ -6,11 +6,11 @@ import { MobileThumbnailContainer } from "@/components/mobileThumbnail";
 
 export default function Home() {
   return (
-    <main className="max-w-7xl mx-auto px-4 mt-28">
+    <main className="max-w-7xl mx-auto lg:px-4 lg:mt-28">
       <div className="flex items-center w-full justify-around gap-4 flex-wrap">
         <ThumbnailContainer />
         <MobileThumbnailContainer />
-        <div className="right-container space-y-8">
+        <div className="right-container space-y-8 max-md:p-4">
           <div>
             <span className="text-lg font-bold text-orange mb-4 block">
               sneakers company
@@ -24,13 +24,15 @@ export default function Home() {
             companion. Featuring a durable rubber outer sole, they&apos;ill{" "}
             <br /> withstand everything the weather can offer.
           </p>
-          <div className="flex gap-4">
-            <span className="text-3xl font-bold">$125.00</span>
-            <span className="bg-paleOrange text-orange text-sm font-bold justify-center- self-center p-1 rounded-md">
-              50%
-            </span>
+          <div className="max-sm:flex max-sm:justify-between self-center">
+            <div className="flex gap-4">
+              <span className="text-3xl font-bold">$125.00</span>
+              <span className="bg-paleOrange text-orange text-sm font-bold justify-center- self-center p-1 rounded-md">
+                50%
+              </span>
+            </div>
+            <span className="opacity-60 line-through">$250.00</span>
           </div>
-          <span className="opacity-60 line-through">$250.00</span>
           <AddCardForm id="1" />
         </div>
       </div>

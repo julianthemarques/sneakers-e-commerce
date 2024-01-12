@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className + " lg:px-24 lg:py-10"}>
+      <body className={inter.className + " lg:px-24 max-lg:py-4 lg:py-10"}>
         <CartContextProvider>
           <Header />
           {children}

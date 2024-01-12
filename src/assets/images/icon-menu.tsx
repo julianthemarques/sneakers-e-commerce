@@ -1,11 +1,20 @@
 import React from "react";
 
 export const IconMenu = ({ ...props }: { className?: string }) => (
-  <svg {...props} width="16" height="15" xmlns="http://www.w3.org/2000/svg">
-    <path
-      d="M16 12v3H0v-3h16Zm0-6v3H0V6h16Zm0-6v3H0V0h16Z"
-      fill="#69707D"
-      fillRule="evenodd"
-    />
+  <svg
+    className="feather feather-menu"
+    fill="none"
+    height="24"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <line x1="3" x2="21" y1="12" y2="12" />
+    <line x1="3" x2="21" y1="6" y2="6" />
+    <line x1="3" x2="21" y1="18" y2="18" />
   </svg>
 );

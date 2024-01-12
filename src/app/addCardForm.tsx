@@ -28,7 +28,7 @@ export const AddCardForm = ({ id }: { id: string }) => {
     });
   }
   return (
-    <form className="flex gap-4 w-full" onSubmit={onSubmit}>
+    <form className="flex gap-4 w-full max-md:flex-col" onSubmit={onSubmit}>
       <CounterContainer
         handleAmount={(counter) => {
           amount = counter;
