@@ -1,8 +1,9 @@
+import { cn } from "@/lib/utils";
 import React from "react";
 
 export const IconMenu = ({ ...props }: { className?: string }) => (
   <svg
-    className="feather feather-menu"
+    className={cn("feather feather-menu", props.className)}
     fill="none"
     height="24"
     stroke="currentColor"
