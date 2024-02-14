@@ -1,24 +1,23 @@
 "use client";
 import { CartIcon } from "@/assets/images/icon-cart";
-import { Logo } from "@/assets/images/logo";
-import Image from "next/image";
+import { IconDelete } from "@/assets/images/icon-delete";
+import { IconMenu } from "@/assets/images/icon-menu";
 import Avatar from "@/assets/images/image-avatar.png";
-import { NavsMock } from "@/mock/navsmock";
-import { useEffect, useState } from "react";
+import thumbnail1 from "@/assets/images/image-product-1-thumbnail.jpg";
+import { Logo } from "@/assets/images/logo";
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useCartContext } from "@/contexts/Cart";
-import thumbnail1 from "@/assets/images/image-product-1-thumbnail.jpg";
-import { IconDelete } from "@/assets/images/icon-delete";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { NavsMock } from "@/mock/navsmock";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 import "swiper/css";
-import { IconMenu } from "@/assets/images/icon-menu";
 
 export const Header = () => {
   const { carts, setCarts } = useCartContext();
@@ -34,7 +33,25 @@ export const Header = () => {
     <header className="flex justify-between max-lg:bg-white max-lg:w-full max-lg:top-0 max-lg:left-0 max-w-7xl mx-auto solid max-lg:p-4 max-lg:items-center lg:border-b-[1px]  border-black/25">
       <div className="flex justify-between">
         <nav className="flex lg:gap-9 max-lg:gap-4">
-          <IconMenu className="lg:hidden" />
+          <Sheet>
+            <SheetTrigger className="lg:hidden">
+              <IconMenu />
+            </SheetTrigger>
+            <SheetContent side="left" className="bg-white">
+              <ul className="flex gap-2 justify-around font-bold text-lg text-black h-16 flex-col mt-24">
+                {NavsMock.map((i) => {
+                  return (
+                    <li
+                      key={i.id}
+                      className="opacity-75 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300 hover:border-b-[6px] border-orange hover:opacity-100 hover:font-semibold"
+                    >
+                      <a href={i.link}>{i.label}</a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </SheetContent>
+          </Sheet>
           <Logo className="opacity-100" />
           <ul className="flex gap-9 justify-around  font-normal text-black h-16 max-lg:hidden">
             {NavsMock.map((i) => {
